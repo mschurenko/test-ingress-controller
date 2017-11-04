@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: test-ingress3
+  annotations:
+    mschurenko/ingress.enabled: "true"
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /testpath
+            backend:
+              serviceName: test
+              servicePort: 80
+      host: test.example.com
